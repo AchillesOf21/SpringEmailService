@@ -14,31 +14,31 @@
         </property>
     </bean>
 
-    <beans profile="production, staging">
+    <!-- <beans profile="production, staging"> -->
     <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
       <!-- Email provider here-->
-      <property name="host" value=""/>
-      <property name="port" value=""/>
-      <property name="username" value=""/>
-      <property name="password" value=""/>
+      <property name="host" value="smtp.gmail.com"/>
+      <property name="port" value="587"/>
+      <property name="username" value="xxxx@gmail.com"/>
+      <property name="password" value="xxxx"/>
 
         <property name="javaMailProperties">
           <props>
-           <prop key="mail.debug">false</prop>
+           <prop key="mail.debug">true</prop>
            <prop key="mail.smtp.auth">true</prop>
            <prop key="mail.smtp.starttls.enable">true</prop>
           </props>
         </property>
    </bean>
 
-   </beans>
+   <!-- </beans> -->
 
 
-    <beans profile="dev, local">
+    <!-- <beans profile="dev, local">
 
       <bean id="mailSender" class="com.porterhead.rest.user.mail.MockJavaMailSender">
 
    </bean>
-   </beans>
+   </beans> -->
 
 </beans>

@@ -18,6 +18,7 @@ public class HelloController {
     @Autowired
     ApplicationConfig config;
 
+    @Autowired
     private EmailServicesGateway emailServicesGateway;
 
     @RequestMapping(method = RequestMethod.GET)
@@ -34,7 +35,7 @@ public class HelloController {
 
     private void sendMailOperation() {
         User user = new User();
-        user.setEmailAddress("kaleeswaran14@gmal.cm");
+        user.setEmailAddress("kaleeswaran14@gmail.com");
         user.setFirstName("Kaless");
          VerificationToken token = new VerificationToken(user, VerificationToken.VerificationTokenType.emailVerification,
                 config.getEmailVerificationTokenExpiryTimeInMinutes());

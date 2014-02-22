@@ -11,7 +11,7 @@
 		http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <int:gateway id="emailServicesGateway" service-interface="com.porterhead.rest.gateway.EmailServicesGateway"
+    <int:gateway id="emailServicesGateway" service-interface="com.mkyong.common.gateway.EmailServicesGateway"
                  default-reply-timeout="3000">
         <int:method name="sendVerificationToken" request-channel="emailVerificationRouterChannel"
                     request-timeout="3000"/>
@@ -55,14 +55,14 @@
     </int:logging-channel-adapter>
 
 
-    <beans profile="dev, local">
+    <!--<beans profile="dev, local">-->
         <bean id="emailVerificationMessageStore" class="org.springframework.integration.store.SimpleMessageStore"/>
 
-    </beans>
-    <beans profile="production, staging">
+    <!--</beans>-->
+<!--    <beans profile="production, staging">
 
         <int-jdbc:message-store id="emailVerificationMessageStore" data-source="dataSource" region="emailVerification"/>
-    </beans>
+    </beans>-->
 
 
 </beans>

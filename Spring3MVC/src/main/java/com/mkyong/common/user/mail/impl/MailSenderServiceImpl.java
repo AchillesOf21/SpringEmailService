@@ -44,6 +44,8 @@ public class MailSenderServiceImpl implements MailSenderService {
 
 
     public EmailServiceTokenModel sendVerificationEmail(final EmailServiceTokenModel emailVerificationModel) {
+
+        System.out.println("sendVerificationEmail > ");
         Map<String, String> resources = new HashMap<String, String>();
           return sendVerificationEmail(emailVerificationModel, config.getEmailVerificationSubjectText(),
                   "META-INF/velocity/VerifyEmail.vm", resources);

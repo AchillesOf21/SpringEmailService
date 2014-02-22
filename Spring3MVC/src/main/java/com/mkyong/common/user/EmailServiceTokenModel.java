@@ -20,7 +20,7 @@ public class EmailServiceTokenModel implements Serializable {
     private final String hostNameUrl;
 
 
-    public EmailServiceTokenModel(User user, VerificationToken token, String hostNameUrl)  {
+     public EmailServiceTokenModel(User user, VerificationToken token, String hostNameUrl)  {
         this.emailAddress = user.getEmailAddress();
         this.token = token.getToken();
         this.tokenType = token.getTokenType();
